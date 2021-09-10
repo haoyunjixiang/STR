@@ -44,7 +44,7 @@ Scene Text Det and Rec Resource
 '21-CVPR | 20/12/10 | [Sequence-to-Sequence Contrastive Learning for Text Recognition](https://arxiv.org/abs/2012.10873) | 0.913| 0.948 |    | 0.940 | [`*PYTORCH(M)`](https://github.com/ku21fan/STR-Fewer-Labels)
 '21-CVPR | 21/03/04 | [Toward Scene Text Recognition With Fewer Labels](https://arxiv.org/abs/2103.04400) | 0.913| 0.948 |    | 0.940 | [`*PYTORCH(M)`](https://github.com/ku21fan/STR-Fewer-Labels)
 '21-CVPR | 21/03/06 | [Read Like Humans: Autonomous, Bidirectional and Iterative Language Modeling for Scene Text Recognition](https://arxiv.org/abs/2103.06495) | 0.955| 0.972 |    | 0.977 | [`*PYTORCH(M)`](https://github.com/FangShancheng/ABINet)
-'21-CVPR | 21/05/04 | [Primitive Representation Learning for Scene Text Recognition](https://arxiv.org/abs/2105.04286) | 0.940 | 0.956 | 0.958  | 0.964 | [`*PYTORCH(M)`](https://github.com/RuijieJ/pren)
+'21-CVPR | 21/05/04 | [Primitive Representation Learning for Scene Text Recognition](https://arxiv.org/abs/2105.04286) | 0.940 | 0.956 | 0.958  | 0.964 | [`*PYTORCH(M)`](https://github.com/RuijieJ/pren) <br> [`BLOG`](https://blog.csdn.net/u011489887/article/details/120230030?spm=1001.2014.3001.5501)
 
 
 ![image](overall_pi_chart.png)
