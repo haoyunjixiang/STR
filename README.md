@@ -1,6 +1,8 @@
 # STR
 Scene Text Det and Rec Resource
 
+[Strategy](strategy.md)
+
 ## Text Recognition
 * Papers are sorted by published date.
 * IC is shorts for ICDAR.
