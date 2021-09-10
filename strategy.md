@@ -2,5 +2,5 @@
 *backbone* | *head* | *loss* | *conv* | *activation* |
 :---: | :---: |:--- | :---: | :---: |
 ReseNet   | CTC | CTCLoss |
-          |   |   | CenterLoss |
+          |   | CenterLoss | 
 MobileNet | Attention | AttentionLoss |
