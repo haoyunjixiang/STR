@@ -43,6 +43,7 @@ Scene Text Det and Rec Resource
 '20-AAAI | 19/12/28 | [TextScanner: Reading Characters in Order for Robust Scene Text Recognition](https://arxiv.org/abs/1912.12422) | 0.895 | 0.926 |       | 0.925 |  
 '20-AAAI | 19/12/21 | [Decoupled Attention Network for Text Recognition](https://arxiv.org/abs/1912.10205) | 0.892 | 0.943 | 0.95  | 0.939 | [`*PYTORCH(M)`](https://github.com/Wang-Tianwei/Decoupled-attention-network)  
 '20-AAAI | 20/02/04 | [GTC: Guided Training of CTC](https://arxiv.org/abs/2002.01276) | 0.929 | 0.955 | 0.952 | 0.943 |
+'20-ECCV | 20/07/04 | [PlugNet: Degradation Aware Scene Text Recognition Supervised by a Pluggable Super-Resolution Unit](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123600154.pdf) | 0.923 | 0.944 | 0.957 | 0.950 | [`*PYTORCH`](https://hub.fastgit.org/huiyang865/plugnet)
 '21-CVPR | 20/12/10 | [Sequence-to-Sequence Contrastive Learning for Text Recognition](https://arxiv.org/abs/2012.10873) | 0.913| 0.948 |    | 0.940 | [`*PYTORCH(M)`](https://github.com/ku21fan/STR-Fewer-Labels)
 '21-CVPR | 21/03/04 | [Toward Scene Text Recognition With Fewer Labels](https://arxiv.org/abs/2103.04400) | 0.913| 0.948 |    | 0.940 | [`*PYTORCH(M)`](https://github.com/ku21fan/STR-Fewer-Labels)
 '21-CVPR | 21/03/06 | [Read Like Humans: Autonomous, Bidirectional and Iterative Language Modeling for Scene Text Recognition](https://arxiv.org/abs/2103.06495) | 0.955| 0.972 |    | 0.977 | [`*PYTORCH(M)`](https://github.com/FangShancheng/ABINet) <br> [`BLOG`](./paper/Read_Like_Humans.md)
