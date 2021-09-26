@@ -49,7 +49,7 @@ Scene Text Det and Rec Resource
 '21-CVPR | 21/03/06 | [Read Like Humans: Autonomous, Bidirectional and Iterative Language Modeling for Scene Text Recognition](https://arxiv.org/abs/2103.06495) | 0.955| 0.972 |    | 0.977 | [`*PYTORCH(M)`](https://github.com/FangShancheng/ABINet) <br> [`Detail`](./paper/Read_Like_Humans.md)
 '21-CVPR | 21/05/04 | [Primitive Representation Learning for Scene Text Recognition](https://arxiv.org/abs/2105.04286) | 0.940 | 0.956 | 0.958  | 0.964 | [`*PYTORCH(M)`](https://github.com/RuijieJ/pren) <br> [`BLOG`](https://blog.csdn.net/u011489887/article/details/120230030?spm=1001.2014.3001.5501)
 '21-ICCV | 21/07/12 | [Joint Visual Semantic Reasoning: Multi-Stage Decoder for Text Recognition](https://arxiv.org/pdf/2107.12090.pdf) | 0.922 | 0.952 |   | 0.955 |
-'21-ICCV | 21/08/09 | [From Two to One: A New Scene Text Recognizer with Visual Language Modeling Network](https://arxiv.org/pdf/2108.09661.pdf) | 0.917 | 0.958 |   | 0.957 | [`*PYTORCH(M)`](https://github.com/wangyuxin87/VisionLAN)
+'21-ICCV | 21/08/09 | [From Two to One: A New Scene Text Recognizer with Visual Language Modeling Network](https://arxiv.org/pdf/2108.09661.pdf) | 0.917 | 0.958 |   | 0.957 | [`*PYTORCH(M)`](https://github.com/wangyuxin87/VisionLAN) <br> [`Detail`](https://zhuanlan.zhihu.com/p/402362039)
 
 
 ![image](overall_pi_chart.png)
