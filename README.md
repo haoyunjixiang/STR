@@ -3,7 +3,7 @@ Scene Text Det and Rec Resource
 
 [Strategy](strategy.md)
 
-## Text Recognition
+## [Text Recognition](./paper/Recognition_survey.md)
 * Papers are sorted by published date.
 * IC is shorts for ICDAR.
 * Score is word-accuracy for recognition task.
