@@ -67,3 +67,17 @@ self.stn的主要过程如下：
 1. 通过CNN获得图像变换参数theta，theta是一个[N,2,3]的tensor
 2. F.affine_grid得到的是输出图像对应原图像的坐标位置grid，是[N,h,w,2]的tensor
 3. 由于grid得到的并不是整数，F.grid_sample通过采样得到变形后的图像。
+
+pytorch参数初始化：
+```python
+        # Initialize the weights/bias with identity transformation
+        self.fc_loc[2].weight.data.zero_()
+        self.fc_loc[2].bias.data.copy_(torch.tensor([1, 0, 0, 0, 1, 0], dtype=torch.float))
+```
+
+paddle参数初始化：
+```python
+        # Initialize the weights/bias with identity transformation
+        self.fc_loc[2].weight.set_value(np.zeros(self.fc_loc[2].weight.shape).astype('float32'))
+        self.fc_loc[2].bias.set_value(np.asarray([1, 0, 0, 0, 1, 0], dtype='float32'))
+```
