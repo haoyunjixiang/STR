@@ -52,6 +52,6 @@ Scene Text Det and Rec Resource
 '21-ICCV | 21/08/09 | [From Two to One: A New Scene Text Recognizer with Visual Language Modeling Network](https://arxiv.org/pdf/2108.09661.pdf) | 0.917 | 0.958 |   | 0.957 | [`*PYTORCH(M)`](https://github.com/wangyuxin87/VisionLAN) <br> [`Detail`](https://zhuanlan.zhihu.com/p/402362039)
 
 
-![image](overall_pi_chart.png)
+![image](img/overall_pi_chart.png)
 
 
