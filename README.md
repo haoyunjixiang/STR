@@ -1,6 +1,6 @@
 # STR
 Scene Text Det and Rec Resource
-
+[Basic Knowledge](Knowledge.md)
 [Strategy](strategy.md)
 
 ## [Text Recognition](./paper/Recognition_survey.md)
