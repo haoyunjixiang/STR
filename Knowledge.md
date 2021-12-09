@@ -95,10 +95,69 @@ One hot编码维度过高解决方法：
 5. 按照该特征对应目标值进行合并
 6. 使用每个分类对应目标变量均值+偏差，或出现频数代替
 
+## 分类问题有哪些评价指标？每种的适用场景
+1. Accuracy  (Area Under Curve)
+2. precision
+3. recall
+4. F1 score
+5. ROC
+6. PR （Precision-Recall）曲线
+
 ## 为什么要用 F1 score
 若只用准确率来表示癌症病人的预测，模型只输出健康，也能达到很高的准确率，这显示不合理。
 precision = TP / (TP + FP)<br>
 recall = TP / (TP + FN)<br>
 F1 = 2 * precision * recall / (precision + recall)
 
+## L1 正则化与 L2 正则化的区别
+正则化：为了限制模型的参数，防止模型过拟合而加在损失函数后面的一项。
 
+L1正则化：各个参数的绝对值之和，能够产生稀疏矩阵。 因为最优的参数值很大概率出现在坐标轴上，这样就会导致某一维的权重为0 ，产生稀疏权重矩阵<br>
+L2正则化：各个参数的平方和。能够使各个参数趋于0.
+
+1. 为什么参数越小代表模型越简单？
+　　越是复杂的模型，越是尝试对所有样本进行拟合，包括异常点。这就会造成在较小的区间中产生较大的波动，这个较大的波动也会反映在这个区间的导数比较大。
+　　只有越大的参数才可能产生较大的导数。因此参数越小，模型就越简单。
+
+2. 实现参数的稀疏有什么好处？
+　　因为参数的稀疏，在一定程度上实现了特征的选择。一般而言，大部分特征对模型是没有贡献的。这些没有用的特征虽然可以减少训练集上的误差，但是对测试集的样本，反而会产生干扰。稀疏参数的引入，可以将那些无用的特征的权重置为0.
+
+## CNN分类网络的演变脉络
+参考：https://www.cnblogs.com/lyp1010/p/12562271.html
+
+## ResNet 流行的原因
+1. 通过引入残差模块，解决网络退化的问题，使得网络可以更深，学习到更好的表示
+2. 梯度增大，快速收敛，加快训练速度。
+
+ResNet_v2 与 v1 的最大区别就是 v2 的 BN 和 ReLU 是在卷积之前使用的，好处：
+
+1. 反向传播基本符合假设，信息传递无阻碍；
+2. BN 层作为 pre-activation，起到了正则化的作用
+
+## Inception v1-v4的区别与改进
+![img.png](img/inception.png)
+
+v1:多个不同size的卷积核能够增强网络的适应能力
+
+v2:学习了VGG使用两个3*3的卷积代替5*5的大卷积，在降低参数的同时建立了更多的非线性变换，使得CNN对特征的学习能力更强。
+
+v3:
+
+## MobileNet，ShuffleNet
+1. mobilenet
+![img.png](img/mobilenet.png)
+2. shufflenet
+   <br>shuffle-net 这个网络模型，是利用了 group 卷积的概念，与 depth-wise 有点像，只不过，depth-wise 是 feature map 一 一对应的，而 group 卷积是将每个卷积层的 feature map 分成几个组，每个组之间没有交叉，不过组内的 feature map 做卷积的时候和常规的卷积运算是一样的，所以 group 卷积的复杂度应该是介于常规卷积核 depth-wise 卷积之间的，shuffle-net 的创新之处在于，group 卷积之后，为了增加组与组之间的 feature map的通信，提出了一个 shuffle channel 的技术，就是将 group 卷积之后 feature map 打乱，乱序连接到下一层，如下图所示：
+![img_1.png](img/shufflenet.png)
+   
+## FCN 和 UNET
+1. FCN
+   + 全卷积 区别于分类网络的全连接
+   + 上采样 为了与标签一一对应进行训练
+   + 跳跃连接 将浅层的位置信息和深层的语义信息结合起来，得到更佳鲁棒的结果
+   ![img_2.png](img/fcn.png)
+2. UNET
+   + U型结构 编码器-解码器结构 即将图像->高语义feature map的过程看成编码器，高语义->像素级别的分类score map的过程看作解码器）进行了加卷积加深处理，FCN只是单纯的进行了上采样。
+   + Skip connection：两者都用了这样的结构
+   + 联合：在FCN中，Skip connection的联合是通过对应像素的求和，而U-Net则是对其的channel的concat过程。
+   ![img_2.png](img/unet.png)
