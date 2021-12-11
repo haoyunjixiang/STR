@@ -161,3 +161,26 @@ v3:
    + Skip connection：两者都用了这样的结构
    + 联合：在FCN中，Skip connection的联合是通过对应像素的求和，而U-Net则是对其的channel的concat过程。
    ![img_2.png](img/unet.png)
+
+## 兩阶段目标检测网络的发展脉络及各自的贡献与特点
+参考：https://blog.csdn.net/qq_38144185/article/details/115699848
+1. RCNN
+   + 候选框 + SVM
+   + 首次使用CNN提取特征代替手工HOG，SIFT特征。
+2. SPP-net
+   + 进行一次CNN操作，在特征图上提取候选框
+   + 进行金字塔池化，得到特征向量
+3. Fast-RCNN
+   + 添加ROI pooling
+   + 使用softmax
+   + 多任务损失函数（分类+回归）
+4. Faster-RCNN
+   + 提出RPN生成候选框，提出了anchor
+   + RPN和检测共享特征
+   
+
+## 解释 ROI Pooling 和 ROI Align 的区别
+都是将候选框池化到固定尺寸
+1. ROI Pooling
+   + 使用两次量化操作进行池化：第一次如665/32 x 665/32 = 20.78 x 20.78   20 /7 x 20/7 = 2.86 x 2.86
+   + 使用线性插值进行池化。
