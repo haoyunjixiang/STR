@@ -52,6 +52,8 @@ Scene Text Det and Rec Resource
 '21-ICCV | 21/08/09 | [From Two to One: A New Scene Text Recognizer with Visual Language Modeling Network](https://arxiv.org/pdf/2108.09661.pdf) | 0.917 | 0.958 |   | 0.957 | [`*PYTORCH(M)`](https://github.com/wangyuxin87/VisionLAN) <br> [`Detail`](https://zhuanlan.zhihu.com/p/402362039)
 
 
-![image](img/overall_pi_chart.png)
+## Layout-Parse OCR
 
-
+*Conf.* | *Date* | *Title* | *SROIE* | *FUNSD* | *Resources* |
+:---: | :---: |:--- | :---: | :---: | :---: |
+21-ACM | 2021/08/02 | [StrucTexT: Structured Text Understanding with Multi-ModalTransformers](https://arxiv.org/pdf/2108.02923.pdf) | 96.88 | 83.09 | [code](https://github.com/PaddlePaddle/VIMER/tree/main/StrucTexT) <br> [video](https://www.bilibili.com/video/BV13F411z7st?spm_id_from=333.999.0.0) <br> [point](./paper/Layout-Parse.md)
