@@ -230,8 +230,13 @@ v3:
    + 使用NAS搜索结构
    + 输入输出改进减少计算量
      ![img_1.png](img/mobilenet_1.png)
-   + h-switch：由于嵌入式设备计算sigmoid是会耗费相当大的计算资源的，因此作者提出了h-switch作为激活函数。且随着网络的加深，非线性激活函数的成本也会随之减少。所以，只有在较深的层使用h-switch才能获得更大的优势。
+   + h-swish：Swish函数优于relu，可以显著提高神经网络的精度。但由于嵌入式设备计算sigmoid是会耗费相当大的计算资源的，因此作者提出了h-swish作为激活函数。且随着网络的加深，非线性激活函数的成本也会随之减少。所以，只有在较深的层使用h-switch才能获得更大的优势。<br>
      ![img_2.png](img/mobilenet_2.png)
+     h-swish的产生过程如下：
+     * Swish函数可以看做是介于线性函数与ReLU函数之间的平滑函数<br>
+      ![img.png](img.png)
+     * 将swish函数近似化。sigmoid函数替换为它的分段线性硬模拟，然后再乘以x代替swish。<br>
+      ![img_1.png](img_1.png)
    + 引入SE结构：Squeeze-and-Excitation Networks，SE模块是一种轻量级的通道注意力模块，能够让网络模型对特征进行校准的机制，使得有效的权重大，无效或效果小的权重小的效果。
    MobileNetV3的SE模块被运用在线性瓶颈结构最后一层上，代替V2中最后的逐点卷积，改为先进行SE操作再逐点卷积。这样保持了网络结构每层的输入和输出，仅在中间做处理。
      ![img.png](img/mobile-resnet.png)

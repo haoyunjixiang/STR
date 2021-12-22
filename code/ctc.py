@@ -98,7 +98,7 @@ for i in range(alpha_beta.shape[0]):
 
 import cv2
 import numpy as np
-rgb_img = cv2.imread('../paper/img.png')
+rgb_img = cv2.imread('../paper/swish.png')
 HSV = cv2.cvtColor(rgb_img, cv2.COLOR_BGR2HSV)
 H, S, V = cv2.split(HSV)
 print(HSV.shape,H.shape)
