@@ -264,3 +264,9 @@ v3:
 ## SSD回顾
 详情查看[SSD](./paper/SSD.md)
 
+## 不同框架函数对比
+*pytorch* | *mindspore*|
+:---: | :---: |
+forward | construct |
+linear | dense |
+view | flatten |
