@@ -18,7 +18,10 @@
    + ‘speckle’ Multiplicative noise using out = image + n*image, where n is uniform noise with specified mean & variance.
 
 3. centerloss的具体实现
+   + 使用贪心策略获取最大概率的一条路径
+   + 根据最大概率的输出确定对应特征向量
 4. 反卷积上采样具体策略
+   + 反卷积 就是元素之间补0后卷积
 
 ## 提问面试官
 1. 数据与模型
