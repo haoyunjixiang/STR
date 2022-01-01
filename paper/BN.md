@@ -34,20 +34,20 @@ BN的好处：
 ## BN 与 GN
 1. 对于BN来讲，norm的操作范围是下图：
    
-    ![img.png](BNnorm.png)
+    ![img.png](../img/BNnorm.png)
 2. LN 和 IN 如下：
    
     ![img_16.png](LN_INnorm.png)
 3. GN
    
-    ![img_17.png](GNnorm.png)
+    ![img_17.png](../img/GNnorm.png)
    
 4. BN 与 GN 效果对比
    
-    ![img_18.png](GN2.png)
-    ![img_20.png](GN4.png)
+    ![img_18.png](../img/GN2.png)
+    ![img_20.png](../img/GN4.png)
 5. GN参数对比
    
-    ![img_19.png](GN3.png)
+    ![img_19.png](../img/GN3.png)
 
 总结：GN相对于BN的优势在于受batchsize大小的影响较小。
