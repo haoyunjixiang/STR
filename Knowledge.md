@@ -218,17 +218,28 @@ v3:
 
 ## mobilenet系列
 1. v1
+   + v1结构
+     
+     ![img_2.png](img/mobileV1struct.png)
    + 使用深度可分离卷积，是计算量降低至1/8 ~ 1/9.
    + 使用relu6 = min(max(0,x),6) 这个激活函数在float16/int8的嵌入式设备中效果很好，能较好地保持网络的鲁棒性。
    + 相比普通的卷积，有了更过的relu6激活函数，使得拥有更多的线性变化，泛化能力更强
 2. v2
-   ![img_3.png](img/mobilenet_3.png)
+   
+   + v2结构
+     
+     ![img_3.png](img/mobileV2struct.png)<br>
+     ![img_3.png](img/mobilenet_3.png)
    + 借鉴resnet使用残差， resnet是压缩-卷积-扩张，目的是为了减少计算量
    + v2是“扩张-卷积-压缩”，由于mobile参数少，提取的特征信息少，扩张是为了提取更多的特征，另一方面是分组卷积无法扩张通道。
      ![img_5.png](img/mobilenet_5.png)
    + 残差模块中的最后一个relu替换成线性激活：高维信息变换回低维信息时，相当于做了一次特征压缩，会损失一部分信息，而再进过relu后，损失的部分就更加大了。作者为了这个问题，就将ReLU替换成线性激活函数。
    ![img_4.png](img/mobilenet_4.png)
 3. v3
+   + v3结构
+     
+     ![img_2.png](img/mobileV3large.png)<br>
+     ![img_2.png](img/mobileV3small.png)
    + 使用NAS搜索结构
    + 输入输出改进减少计算量
      ![img_1.png](img/mobilenet_1.png)
@@ -236,9 +247,9 @@ v3:
      ![img_2.png](img/mobilenet_2.png)
      h-swish的产生过程如下：
      * Swish函数可以看做是介于线性函数与ReLU函数之间的平滑函数<br>
-      ![img.png](img.png)
+      ![img.png](img/swish.png)
      * 将swish函数近似化。sigmoid函数替换为它的分段线性硬模拟，然后再乘以x代替swish。<br>
-      ![img_1.png](img_1.png)
+      ![img_1.png](img/h-swish.png)
    + 引入SE结构：Squeeze-and-Excitation Networks，SE模块是一种轻量级的通道注意力模块，能够让网络模型对特征进行校准的机制，使得有效的权重大，无效或效果小的权重小的效果。
    MobileNetV3的SE模块被运用在线性瓶颈结构最后一层上，代替V2中最后的逐点卷积，改为先进行SE操作再逐点卷积。这样保持了网络结构每层的输入和输出，仅在中间做处理。
      ![img.png](img/mobile-resnet.png)
@@ -272,3 +283,11 @@ v3:
 forward | construct |
 linear | dense |
 view | flatten |
+
+## 最大池化可以去掉吗
+![img.png](img/removepool.png)
+在上述模型C的基础上：
++ 第1列：去掉所有max-pool，并把前面一层conv的stride变为2。
++ 第3列，max-pool 变成 步长为2的conv +ReLU
++ 第2列：保留max-pool，并让参数量和第3列一样
++ 第3列和第2列的（learnable）参数量一样，但第3列flops变少. 且实验发现精度变高。
