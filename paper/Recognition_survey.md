@@ -21,7 +21,7 @@
 * 基于CTC方法
 * 基于attention的方法
 
-![img_14.png](img_14.png)
+![img_14.png](../img/img_STR-struct.png)
 
 无分割的方法是把整个文本行当做序列来处理。
 

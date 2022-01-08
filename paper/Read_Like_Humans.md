@@ -25,12 +25,12 @@
 
 ## 提出的方法
 ### 视觉模型
-![img_1.png](img_1.png)
+![img_1.png](../img/img_ABInet.png)
 
 如图三，视觉模型由一个主干网络和一个位置注意力模块组成。在先前的方法中，ResNet 和 Transformer 单元作为特征提取网络和序列建模网络被使用。Fb=T(R(x))，x是输入图像，R()表示 ResNet 网络，T()表示 Transformer 单元。
 位置注意力模块将视觉特征并行转化为字符概率，基于范式：
 
-![img.png](swish.png)
+![img.png](../img/swish-format.png)
 
 Q是字符顺序的位置编码，T是字符序列的长度，K=g(Fb)，g()是对mini U-Net的完善。V=H(Fb)，H()是标识映射。
 

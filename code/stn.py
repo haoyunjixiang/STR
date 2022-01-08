@@ -181,7 +181,7 @@ def start_train():
     plt.show()
 
 def grid_test():
-    img = cv2.imread("../paper/swish.png")
+    img = cv2.imread("../img/swish-format.png")
     out_h = img.shape[0]
     out_w = img.shape[1]
     img = np.moveaxis(img, -1, 0)

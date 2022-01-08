@@ -52,6 +52,17 @@ Scene Text Det and Rec Resource
 '21-ICCV | 21/08/09 | [From Two to One: A New Scene Text Recognizer with Visual Language Modeling Network](https://arxiv.org/pdf/2108.09661.pdf) | 0.917 | 0.958 |   | 0.957 | [`*PYTORCH(M)`](https://github.com/wangyuxin87/VisionLAN) <br> [`Detail`](https://zhuanlan.zhihu.com/p/402362039)
 
 
+## Text Recognition with Semantic information
+*Conf.* | *Date* | *Title* | *SVT* | *IIIT5k* | *IC13* | *IC15* | *Resources* |
+:---: | :---: |:--- | :---: | :---: | :---: | :---: | :---: |
+'20-CVPR | 20/05/10 | [SEED: Semantics Enhanced Encoder-Decoder Framework for Scene Text Recognition](https://arxiv.org/abs/2005.10977) | 89.6 | 93.8 | 92.8 | 80.0 | [`Detail`](https://blog.csdn.net/m0_38007695/article/details/107391688) <br> [`*PYTORCH(M)`](https://github.com/Pay20Y/SEED)
+'20-CVPR | 20/03/04 | [SRN: Towards Accurate Scene Text Recognition with Semantic Reasoning Networks](https://arxiv.org/abs/2003.12294) | 91.5 | 94.8 | 95.5 | 82.7 | [`Detail`](https://blog.csdn.net/u011489887/article/details/107486614) <br> [`*PYTORCH(M)`](https://github.com/chenjun2hao/SRN.pytorch)
+'21-CVPR | 21/03/06 | [ABInet: Read Like Humans: Autonomous, Bidirectional and Iterative Language Modeling for Scene Text Recognition](https://arxiv.org/abs/2103.06495) | 0.955 | 0.972 | 0.977 | 0.869 | [`*PYTORCH(M)`](https://github.com/FangShancheng/ABINet) <br> [`Detail`](./paper/Read_Like_Humans.md)
+‘22-AAAI | 21/12/12 | [GTR: Visual Semantics Allow for Textual Reasoning Better in Scene Text Recognition](https://arxiv.org/abs/2112.12916v1) | 95.8 | 97.5 | 97.5 | 87.3 | [`Detail`](./paper/GTR.md) <br> [`*PYTORCH(M)`](https://github.com/adeline-cs/GTR)
+
+
+
+
 ## Layout-Parse OCR
 
 *Conf.* | *Date* | *Title* | *SROIE* | *FUNSD* | *Resources* |

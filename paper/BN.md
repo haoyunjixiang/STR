@@ -37,7 +37,7 @@ BN的好处：
     ![img.png](../img/BNnorm.png)
 2. LN 和 IN 如下：
    
-    ![img_16.png](LN_INnorm.png)
+    ![img_16.png](../img/LN_INnorm.png)
 3. GN
    
     ![img_17.png](../img/GNnorm.png)

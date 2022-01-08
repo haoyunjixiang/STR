@@ -13,19 +13,19 @@
 
 对于第一个问题来说，作者考虑的是使用attention来引导CNN特征的学习。论文中有谈到attention机制能够学习字符之间的关联性，从而能够对字符有较好的定位，并且学习到更加有效的特征，但是使用attention机制来引导特征学习，由于它用到之前time step的一些信息，不可以并行计算，所以在inference时会非常耗时。而对于CTC方法来说，虽然CNN学习到的字符特征并不准确，但是它的inference time真的非常短。
 
-![img_7.png](img_7.png)
+![img_7.png](../img/img_GTC.png)
 
 作者在训练阶段添加了额外的GRU+attention模块，并将计算图分割，用于引导CNN的学习：
 
-![img_8.png](img_8.png)
-![img_9.png](img_9.png)
+![img_8.png](../img/img_GTC2.png)
+![img_9.png](../img/img_GTC3.png)
 
 ### 同字符特征集中化
 为了将同一个label的序列特征更加集中化，作者使用了GCN（图卷积网络）来捕捉特征之间的依赖关系，并基于所得到的依赖关系将相同label的特征合并。
 
 在CRNN中，CNN的作用是用来提取特征，BiLSTM的作用是学习特征上下文之间的关系，这两者都不能将同一个label的特征集中化。所以作者提出了使用GCN网络，通过引入相似性邻接矩阵和距离矩阵来共同描述上下文的关系，使得label的特征能够更加强化。GCN网络被用在CNN网络之后，BiLSTM网络之前。
 通过引入相似矩阵和距离矩阵来考虑特征之间的关系，能够将label的特征更加强化，可以解决前面所说的第二个问题.
-![img_10.png](img_10.png)
+![img_10.png](../img/img_GTC4.png)
 
 ## 总结
 - 利用attention分支对矫正网络和特征提取网络进行一定的监督作用

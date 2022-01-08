@@ -8,8 +8,8 @@
 ## 介绍
 在自然场景下，图片中文字可能模糊，扭曲，部分遮挡等情况，单独利用视觉特征使得识别极度困难。而人却可以利用
 已识别出的文字进行推理。受此启发，我们提出了多阶段的识别预测模型。
-![img_11.png](img_11.png)
+![img_11.png](../img/img_JVSR1.png)
 
-![img_12.png](img_12.png)
+![img_12.png](../img/img_JVSR2.png)
 
-![img_13.png](img_13.png)
+![img_13.png](../img/img_JVSR3.png)
