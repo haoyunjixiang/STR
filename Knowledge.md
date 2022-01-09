@@ -283,6 +283,14 @@ v3:
 forward | construct |
 linear | dense |
 view | flatten |
+1. Tensorflow
+    + tf.get_variable,如果你定义的变量名称在之前已被定义过，则TensorFlow 会引发异常。可使用tf.get_variable( ) 函数代替tf.Variable( )。如果变量存在，函数tf.get_variable( ) 会返回现有的变量。如果变量不存在，会根据给定形状和初始值创建变量。
+    + tf.scatter_sub,将稀疏更新减去一个变量引用。
+    ![img.png](img/tf.scatter_sub.png)
+    + tf.gather,根据索引从参数轴上收集切片
+    ![img.png](img/tf.gather.png)
+    + tf.cast,张量数据类型转换
+
 
 ## 最大池化可以去掉吗
 ![img.png](img/removepool.png)
@@ -291,3 +299,8 @@ view | flatten |
 + 第3列，max-pool 变成 步长为2的conv +ReLU
 + 第2列：保留max-pool，并让参数量和第3列一样
 + 第3列和第2列的（learnable）参数量一样，但第3列flops变少. 且实验发现精度变高。
+
+## CRNN运行数据
+paddleOCR中运行数据
+1. rnn输出[16,80,512] batchsize是16，80是序列长度，512是特征向量长度
+2. CTChead输出[16,80,6625] 6625是字典字符数量
