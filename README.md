@@ -64,6 +64,7 @@ Scene Text Det and Rec Resource
 
 
 ## Layout-Parse OCR
+[method collect](https://zhuanlan.zhihu.com/p/392058153)
 
 *Conf.* | *Date* | *Title* | *SROIE* | *FUNSD* | *Resources* |
 :---: | :---: |:--- | :---: | :---: | :---: |

@@ -67,3 +67,10 @@ result = addition_func(4)
 ## Python 垃圾回收
 1. 引用计数为主
 2. 分代回收为辅
+
+## Pyhton list dict 添加删除元素
+list 添加元素：append,insert
+list 删除元素：remove pop del
+
+dict添加元素：d[key] = '' update(dict)
+删除元素 ： pop del
