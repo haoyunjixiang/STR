@@ -74,3 +74,6 @@ list 删除元素：remove pop del
 
 dict添加元素：d[key] = '' update(dict)
 删除元素 ： pop del
+
+## python 数组筛选
+[x for x in list if x>0]
