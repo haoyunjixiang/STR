@@ -75,5 +75,15 @@ list 删除元素：remove pop del
 dict添加元素：d[key] = '' update(dict)
 删除元素 ： pop del
 
+"".join([]) list转str
+
 ## python 数组筛选
 [x for x in list if x>0]
+
+## dict技巧
+1. 统计字符串或list 单词频数
+
+from collection import Count
+dict(Count(str or list))
+
+2. 可用 == 判断两个 字典是否相等
