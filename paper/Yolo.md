@@ -21,3 +21,18 @@
 7. 多尺度预测，把大特征图拆分成小特征图后，与后面的拼接然后预测
 8. 多尺度训练，训练过程中会变化输入尺寸
 
+## YOLOv3
+改造网络由Darknet19->Darknet53
+![img.png](../img/yolov3.png)
+1. 丢掉池化以及全连接
+2. 借鉴FPN
+3. 借鉴restnet,densenet
+4. 残差连接时使用add而不是concat
+
+## YoloV4
+![img.png](../img/yolov4_1.png)
+![img.png](../img/yolov4_2.png)
+1. Darknet53 -> CSPDarknet53
+2. 数据增强cutout，gridMask
+3. 正则化Dropout、Dropblock
+4. 增大感受野：SPP、ASPP、RFB

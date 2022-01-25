@@ -87,3 +87,6 @@ from collection import Count
 dict(Count(str or list))
 
 2. 可用 == 判断两个 字典是否相等
+
+## 判断二维数组最大值
+max(map(max,list))
