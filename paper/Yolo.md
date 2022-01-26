@@ -36,3 +36,8 @@
 2. 数据增强cutout，gridMask
 3. 正则化Dropout、Dropblock
 4. 增大感受野：SPP、ASPP、RFB
+5. FPN的改进方式：
+   + ASFF 对融合的不同层加上权重
+     ![img.png](../img/ASFF.png)
+   + BiFPN 对PANnet融合的连接方式改造，移除p3和p7的节点，并进行跳跃连接，同时对融合层尝试了不同的权重策略
+     ![img.png](../img/BiFPN.png)
