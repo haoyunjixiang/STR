@@ -13,4 +13,5 @@
       ![img.png](../img/GIOU.png)
     + DIOU 弥补了GIOU在两者重叠时，损失不变的缺点，除以最小box对角线长度<br>
       ![img.png](../img/DIOU.png)
+    + CIOU 解決中心点重合，但宽高比不同时，loss不变的情况。 在Diou的基础上增加影响因子a,v把长宽比的一致性考虑进去。
 ![img.png](../img/TinaFace.png)
