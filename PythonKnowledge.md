@@ -90,3 +90,6 @@ dict(Count(str or list))
 
 ## 判断二维数组最大值
 max(map(max,list))
+
+## 字符串反转
+revers(str)  反转字符串 然后判断是否回文
