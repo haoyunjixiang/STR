@@ -24,6 +24,7 @@
 ## YOLOv3
 改造网络由Darknet19->Darknet53
 ![img.png](../img/yolov3.png)
+![img_1.png](../img/yolov3_2.png)
 1. 丢掉池化以及全连接
 2. 借鉴FPN
 3. 借鉴restnet,densenet
@@ -32,7 +33,8 @@
 ## YoloV4
 ![img.png](../img/yolov4_1.png)
 ![img.png](../img/yolov4_2.png)
-1. Darknet53 -> CSPDarknet53
+1. Darknet53 -> CSPDarknet53  借鉴CSPNet,(Cross-stage partial connections)
+   ![img.png](../img/v4CSP.png)
 2. 数据增强cutout，gridMask
 3. 正则化Dropout、Dropblock
 4. 增大感受野：SPP、ASPP、RFB
@@ -49,4 +51,22 @@
 8. BN的改进FRN 对于batchsize不再敏感
 9. 注意力机制 CBAM 基于通道注意力和空间注意力
 10. 数据增强Mosaic 4张图片拼成一个
-11. CSP 将通道分开后然后卷积
+11. CSP 降低计算量，轻量化的同时保持精度
+    ![img.png](../img/CSPnet.png)
+    + a图是原始的DenseNet的特征融合方式
+    + b图是CSPDenseNet的特征融合方式（trainsition->concatenation->transition）
+    + c图是Fusion First的特征融合方式（concatenation->transition）
+    + d图是Fusion Last的特征融合方式（transition->concatenation）
+    
+    Fustion First的方式是对两个分支的feature map先进行concatenation操作，这样梯度信息可以被重用。
+同时使用Fusion First和Fusion Last的CSP所采用的融合方式可以在降低计算代价的同时，提升准确率。
+
+Fusion Last的方式是对Dense Block所在分支先进性transition操作，然后再进行concatenation， 梯度信息将被截断，因此不会重复使用梯度信息 。
+12. 激活函数改进  Mish=x * tanh(ln(1+e^x))。
+    ![img.png](../img/Mish.png)
+## YOLOv5
+1. Fcous结构：
+   将RGB三通道图片进行邻近采样得到分辨率减半的12通道特征图,在不损失信息的情况下，特征图通道增加，该操作是为了提速。
+   ![img.png](../img/Focus.png)
+2. yolov5 两种CSP结构  CSP1_X结构应用于Backbone主干网络，另一种CSP2_X结构则应用于Neck中
+    ![img.png](../img/v5CSP.png)
