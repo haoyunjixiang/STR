@@ -28,6 +28,20 @@
    ![img_2.png](../img/qkv3.png)
 
 ### attention种类
+attention 变化主要体现在score-funtion、generate context function。
 ![img.png](../img/attention_kind.png)
+1. attention的两大经典结构
+![img.png](../img/attention_ludong.png)
+2. Self Attention & Multi-head Attention
+   + Self Attention
+      为什么引入Self-Attention： 1.RNN 能够解决长距离依赖的问题，但由于递归的本质导致不能并行；2.CNN可以并行，但是局部信息依赖。3.self-attention 借鉴 CNN中 multi-kernel 的思想，进一步进化成为 Multi-Head attention。每一个不同的 head 使用不同的线性变换，学习不同的 relationship。
+     ![img_1.png](../img/RNN_abstraction.png)
+     ![img.png](../img/self-attention.png)
+### [Transform详解(超详细) Attention is all you need](https://zhuanlan.zhihu.com/p/63191028)
+文章的创新点：抛弃了原有encoder-decoder模型必须结合cnn或者rnn的固有模式，只用Attention，文章的主要目的在于减少计算量和提高并行效率的同时不损害最终的实验结果。
+![img.png](transformer.png)
+1. 其本质是Seq2Seq模型，左边输入，右边输出。
+2. 在self-Attention的基础上组成Multi-head Attention，还有positional encoding，residuals 这些小而美的东西。
+   
 
 
