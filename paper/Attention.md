@@ -42,6 +42,25 @@ attention 变化主要体现在score-funtion、generate context function。
 ![img.png](transformer.png)
 1. 其本质是Seq2Seq模型，左边输入，右边输出。
 2. 在self-Attention的基础上组成Multi-head Attention，还有positional encoding，residuals 这些小而美的东西。
+3. QKV模式的来源：
+   为什么要有QKV向量，因为这个思路来自于比较早的信息检索领域，就是query，就是key，就是值，(k,v)就是键值对、也就是用query关键词去找到最相似的K，根据K得到V。
+4. QKV的计算: 
+    ![img.png](QKV.png)
+   为了得到query，key，value，一个x就得做3次矩阵乘法，之所以用矩阵乘法而不是神经网络，是因为
+   GPU能对矩阵运算加速，GPU中矩阵运算的复杂度是O(1)不是O(N*N)
+
+
+细节拆分：
+1. 输入Embedding
+2. Positional Encoding
+3. Multi-head Attention
+   ![img.png](../img/Scaled_Dot-Product_Attention.png)
+   ![img.png](../img/Multi-head-Attention.png)
+4. Add & norm
+5. Feed Forward
+6. Masked Multi-head Attention  
+   Masked Multi-Head Attention 是在Scaled Dot-Product Attention的结构中加入了mask单元，以防止在解码时访问到当前位置之后的信息，本质上是加了mask的Multi-Head Attention。
+
    
 
 
