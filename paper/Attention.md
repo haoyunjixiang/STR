@@ -45,17 +45,43 @@ attention 变化主要体现在score-funtion、generate context function。
 3. QKV模式的来源：
    为什么要有QKV向量，因为这个思路来自于比较早的信息检索领域，就是query，就是key，就是值，(k,v)就是键值对、也就是用query关键词去找到最相似的K，根据K得到V。
 4. QKV的计算: 
-    ![img.png](QKV.png)
+    ![img.png](../img/QKV-attention.png)
+   ![img.png](../img/QKV-attention2.png)
    为了得到query，key，value，一个x就得做3次矩阵乘法，之所以用矩阵乘法而不是神经网络，是因为
-   GPU能对矩阵运算加速，GPU中矩阵运算的复杂度是O(1)不是O(N*N)
-
+   GPU能对矩阵运算加速，GPU中矩阵运算的复杂度是O(1)不是O(N*N)。其中d代表向量K的长度，除以根号d的原因原论文说，
+   点乘后数值很大，导致softmax后导数很小。因此通过根号d进行缩放。
 
 细节拆分：
 1. 输入Embedding
 2. Positional Encoding
+   
+   进行位置编码是因为若输入的顺序变化（[q1,q2,q3] 和 [q1,q3,q2]）,其得到的b1不受影响。
+   ```python
+      import torch
+      import torch.nn as nn
+      
+      m = nn.MultiheadAttention(embed_dim=2, num_heads=1)
+      
+      t1 = [[[1., 2.],   # q1, k1, v1
+             [2., 3.],   # q2, k2, v2
+             [3., 4.]]]  # q3, k3, v3
+      
+      t2 = [[[1., 2.],   # q1, k1, v1
+             [3., 4.],   # q3, k3, v3
+             [2., 3.]]]  # q2, k2, v2
+      
+      q, k, v = torch.as_tensor(t1), torch.as_tensor(t1), torch.as_tensor(t1)
+      print("result1: \n", m(q, k, v))
+      
+      q, k, v = torch.as_tensor(t2), torch.as_tensor(t2), torch.as_tensor(t2)
+      print("result2: \n", m(q, k, v))
+
+   ```
+   位置编码的两种方式：
+   1. 直接加在输入a中
+   2. 可训练的位置编码
 3. Multi-head Attention
-   ![img.png](../img/Scaled_Dot-Product_Attention.png)
-   ![img.png](../img/Multi-head-Attention.png)
+   ![img.png](../img/Multi-Attention.png)
 4. Add & norm
 5. Feed Forward
 6. Masked Multi-head Attention  
