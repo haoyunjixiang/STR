@@ -39,7 +39,7 @@ attention 变化主要体现在score-funtion、generate context function。
      ![img.png](../img/self-attention.png)
 ### [Transform详解(超详细) Attention is all you need](https://zhuanlan.zhihu.com/p/63191028)
 文章的创新点：抛弃了原有encoder-decoder模型必须结合cnn或者rnn的固有模式，只用Attention，文章的主要目的在于减少计算量和提高并行效率的同时不损害最终的实验结果。
-![img.png](transformer.png)
+![img.png](../img/transformer.png)
 1. 其本质是Seq2Seq模型，左边输入，右边输出。
 2. 在self-Attention的基础上组成Multi-head Attention，还有positional encoding，residuals 这些小而美的东西。
 3. QKV模式的来源：
@@ -88,5 +88,9 @@ attention 变化主要体现在score-funtion、generate context function。
    Masked Multi-Head Attention 是在Scaled Dot-Product Attention的结构中加入了mask单元，以防止在解码时访问到当前位置之后的信息，本质上是加了mask的Multi-Head Attention。
 
    
+## 基于attention的文字识别方法
+基于attention的文字识别基本原理：举个例子，假设输入灰度图像resize之后大小为(32, 100)，经过特征提取网络进行编码之后变为（26, 96），这里忽略掉了batch size，其中26是序列长度，也就是时间步；
+96是字符类别，包括数字、大小写英文字母以及常用标点符号，再加上两个特殊字符，“[GO]”表示开始, “[s]”表示文本结束。
 
+ICDAR 2019冠军github地址：https://github.com/zhang0jhon/AttentionOCR
 

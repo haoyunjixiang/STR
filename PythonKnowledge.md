@@ -82,11 +82,17 @@ dict添加元素：d[key] = '' update(dict)
 
 ## dict技巧
 1. 统计字符串或list 单词频数
-
-from collection import Count
-dict(Count(str or list))
+   
+    from collection import Count
+   
+    dict(Count(str or list))
 
 2. 可用 == 判断两个 字典是否相等
+3. 字典排序
+   mydict = {'a':3 , 'b':2 , 'c': 1}
+   newdict = sorted(mydict.items(),key = (lambda x:[x[0],x[1]]))
+    1. 关键是mydict.items() 转换成元组，得到可迭代的数组
+    2. lambda x : [x[0],x[1]]  按照所需排序
 
 ## 判断二维数组最大值
 max(map(max,list))
