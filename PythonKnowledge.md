@@ -93,6 +93,12 @@ dict添加元素：d[key] = '' update(dict)
    newdict = sorted(mydict.items(),key = (lambda x:[x[0],x[1]]))
     1. 关键是mydict.items() 转换成元组，得到可迭代的数组
     2. lambda x : [x[0],x[1]]  按照所需排序
+## numpy特性
+### 写NMS需要以下技巧
+1. np.maximum 利用广播机制求最大值
+2. array[:,1:2] 获取某一列值，list不具备该写法
+3. np.where(array>0.7)[0]  获取符合条件的下标
+4. array[iou>threshold] 返回符合条件的value，[]括号内可以传int或bool列表
 
 ## 判断二维数组最大值
 max(map(max,list))

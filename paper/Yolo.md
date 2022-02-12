@@ -50,6 +50,15 @@
     
 8. BN的改进FRN 对于batchsize不再敏感
 9. 注意力机制 CBAM 基于通道注意力和空间注意力
+   ![img.png](../img/CBAM.png)
+   ![img.png](../img/channel&spatial.png)
+   1. 通道注意力模块首先将feature map在spatial维度上进行压缩，得到一个一维矢量，通过average pooling和max pooling两个pooling函数以后总共可以得到两个一维矢量，
+      再经过同一个MLP得到权重，相加作为最终的注意力向量（权重）。这里global average pooling对feature map上的每一个像素点都有反馈，而global max pooling在
+      进行梯度反向传播计算只有feature map中响应最大的地方有梯度的反馈，能作为GAP的一个补充。
+   2. 除了在channel上生成了attention模型，作者表示在spatial层面上也需要网络能明白feature map中哪些部分应该有更高的响应。首先，还是使用average pooling和
+       max pooling对输入feature map进行压缩操作，只不过这里的压缩变成了通道层面上的压缩，对输入特征分别在通道维度上做了mean和max操作。最后得到了两个二维的feature，
+       将其按通道维度拼接在一起得到一个通道数为2的feature map，之后使用一个包含单个卷积核的隐藏层对其进行卷积操作，要保证最后得到的feature在spatial维度上与输入的feature map一致。
+       两个模块的连接方式既可以平行连接也可以顺序连接。文中经过实验证明，顺序排列比并行排列提供更好的结果，且通道注意在前比空间注意在前效果更好。
 10. 数据增强Mosaic 4张图片拼成一个
 11. CSP 降低计算量，轻量化的同时保持精度
     ![img.png](../img/CSPnet.png)

@@ -89,8 +89,11 @@ attention 变化主要体现在score-funtion、generate context function。
 
    
 ## 基于attention的文字识别方法
+![img.png](../img/aster-rec.png)
 基于attention的文字识别基本原理：举个例子，假设输入灰度图像resize之后大小为(32, 100)，经过特征提取网络进行编码之后变为（26, 96），这里忽略掉了batch size，其中26是序列长度，也就是时间步；
-96是字符类别，包括数字、大小写英文字母以及常用标点符号，再加上两个特殊字符，“[GO]”表示开始, “[s]”表示文本结束。
+96是字符类别，包括数字、大小写英文字母以及常用标点符号，再加上两个特殊字符，“[GO]”表示开始, “[s]”表示文本结束。推理阶段采用beam search 进行输出。
 
 ICDAR 2019冠军github地址：https://github.com/zhang0jhon/AttentionOCR
+
+
 

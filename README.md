@@ -60,7 +60,10 @@ Scene Text Det and Rec Resource
 '21-CVPR | 21/03/06 | [ABInet: Read Like Humans: Autonomous, Bidirectional and Iterative Language Modeling for Scene Text Recognition](https://arxiv.org/abs/2103.06495) | 0.955 | 0.972 | 0.977 | 0.869 | [`*PYTORCH(M)`](https://github.com/FangShancheng/ABINet) <br> [`Detail`](./paper/Read_Like_Humans.md)
 ‘22-AAAI | 21/12/12 | [GTR: Visual Semantics Allow for Textual Reasoning Better in Scene Text Recognition](https://arxiv.org/abs/2112.12916v1) | 95.8 | 97.5 | 97.5 | 87.3 | [`Detail`](./paper/GTR.md) <br> [`*PYTORCH(M)`](https://github.com/adeline-cs/GTR)
 
-
+## Text Recognition base Classification
+*Conf.* | *Date* | *Title* | *SVT* | *IIIT5k* | *IC13* | *IC15* | *Resources* |
+:---: | :---: |:--- | :---: | :---: | :---: | :---: | :---: |
+... | 21/02/12 | [Revisiting Classification Perspective on Scene Text Recognition](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/2102.10884) | 92.3 | 94.5 | 94.1 | 82.0 | [`Detail`](./paper/CSTR.md) <br> [`*PYTORCH(M)`](https://github.com/Media-Smart/vedastr)
 
 
 ## Layout-Parse OCR

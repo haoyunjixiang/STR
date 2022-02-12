@@ -378,7 +378,8 @@ if __name__ == "__main__":
     keep_dets = py_nms(dets, thresh)
     print(keep_dets)
     print(dets[keep_dets])
-
-
 ```
-    
+### [CrossEntropyLoss 计算步骤](./code/Loss.py)
+1. softmax计算，使其概率和为1
+2. log计算，输入域为(0,1)，值域为（-&，0）
+3. 取对应标签log值的相反数，变负为正。取一个batchsize的平均数。
