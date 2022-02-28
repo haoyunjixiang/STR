@@ -13,3 +13,9 @@
 ### loss && optim
 1. torch.nn.CTCLoss
 2. torch.optim.Adam
+
+### 优化器衰减
+torch.optim.lr_scheduler 分为三大类
+1. 有序调整：等间隔调整(Step)，按需调整学习率(MultiStep)，指数衰减调整(Exponential)和 余弦退火CosineAnnealing。
+2. 自适应调整：自适应调整学习率 ReduceLROnPlateau。
+3. 自定义调整：自定义调整学习率 LambdaLR。
