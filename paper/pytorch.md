@@ -16,6 +16,6 @@
 
 ### 优化器衰减
 torch.optim.lr_scheduler 分为三大类
-1. 有序调整：等间隔调整(Step)，按需调整学习率(MultiStep)，指数衰减调整(Exponential)和 余弦退火CosineAnnealing。
-2. 自适应调整：自适应调整学习率 ReduceLROnPlateau。
+1. 有序调整：等间隔调整(Step)，按需调整学习率(MultiStep，按照指定的阶段衰减)，指数衰减调整(Exponential)和 余弦退火CosineAnnealing。
+2. 自适应调整：自适应调整学习率 ReduceLROnPlateau。可以监控精确度或损失不变化时，进行lr更新。
 3. 自定义调整：自定义调整学习率 LambdaLR。
