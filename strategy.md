@@ -6,7 +6,6 @@ ReseNet | [CTC](https://blog.csdn.net/u011489887/article/details/120736691) | [C
 MobileNet | Attention | AttentionLoss |
 
 
-
 # LOSS
 ## 交叉熵损失
 参考：https://zhuanlan.zhihu.com/p/35709485

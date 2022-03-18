@@ -38,6 +38,12 @@
 3. 可变形卷积
 4. 别的LOSS函数
 5. CTC的缺点粘连问题
+
+商汤one:
+1. 手撕softmax crossentroy
+2. 推理速度与芯片的关系 roofline model
+3. FPN的输入与输出是什么  FPN的通道设计
+
 ## 提问面试官
 1. 数据与模型
 2. 文本行多行文本
