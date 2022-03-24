@@ -422,3 +422,25 @@ if __name__ == '__main__':
     out = conv_naive(x, 15, ksize=3, padding=1, stride=2)
     print(out.shape)
 ```
+
+### relu的不可导
+relu在0处的间断点按左导数0处理。
+relu的优点：
+1. 防止梯度爆炸
+2. 计算简单，快速，方便
+3. 加速收敛
+
+relu的缺点：
+1. 负数部分恒为0，导致一部分神经元失活
+2. 不是以0为中心
+
+### 正则化的操作有哪些
+1. L1 L2
+2. dropout
+3. 数据增强
+4. 提前终止训练
+5. 多任务学习
+6. Bagging(全称是bootstrap aggregating)通过整合多个模型来减小泛化误差，
+   其基本思想是多个模型对于训练集做出同样错误预测的概率较小，Bagging是ensemble methods（集成算法）的一种方法。
+7. 对抗学习
+   
