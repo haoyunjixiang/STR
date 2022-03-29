@@ -51,3 +51,9 @@ BN的好处：
     ![img_19.png](../img/GN3.png)
 
 总结：GN相对于BN的优势在于受batchsize大小的影响较小。
+
+### BN与LN
+1. LN是针对一个样本内的归一化处理，不受batchsize的影响，适用于LSTM的加速，但CNN加速时并没有取得比BN更好的效果。
+2. BN不适用与RNN的normalize操作，BN实际需要计算并保存某一层的均值方差，对一个
+固定的CNN使用BN很方便，但对于RNN来说，RNN的深度不固定，不同的time-step需要保存
+不同的statics特征，这样计算很麻烦，LN可以有效的解决上述问题
