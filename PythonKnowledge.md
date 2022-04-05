@@ -88,6 +88,7 @@ dict添加元素：d[key] = '' update(dict)
     dict(Count(str or list))
 
 2. 可用 == 判断两个 字典是否相等
+   is 与 == 的区别，is比较地址是否相等，==比较内容是否相等
 3. 字典排序
    mydict = {'a':3 , 'b':2 , 'c': 1}
    newdict = sorted(mydict.items(),key = (lambda x:[x[0],x[1]]))
