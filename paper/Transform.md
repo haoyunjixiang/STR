@@ -22,10 +22,10 @@
 ## Vision Transform (VIT)
 实现步骤：<br>
 ![img.png](../img/VIT.png)
-1. 图片分块
-2. patch 转化为 embedding
-3. 加入位置编码
-4. transform处理
+1. 图片分块 224 * 224 -->  16 * 16 * 196
+2. patch 转化为 embedding  （196 + 1） * 768  1是加了分类
+3. 加入位置编码   是一个768的向量与embedding 加和 变为 197 * 768
+4. transform处理  多层叠加处理仍然输出 197 * 768
 5. 分类处理(两种⽅式，⼀种是使⽤CLS token，另⼀种就是对所有tokens的输出做⼀个平均)
 
 VIT 与 Resnet的差异：两个网络在整合全局信息的能力上存在差异。
