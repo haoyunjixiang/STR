@@ -32,6 +32,8 @@ VIT 与 Resnet的差异：两个网络在整合全局信息的能力上存在差
 1. VIT无论是高层还是低层都是局部和全局信息混杂的。
 2. Resnet 更为严格的遵守从局部特征提取到全局特征的过程。
 
+VIT 代码实现：https://github.com/FrancescoSaverioZuppichini/ViT
+
 ## Self-attention based Text Knowledge Mining for Text Detection（STKM)
 ![img.png](../img/STKM.png)
 文章的动机：
