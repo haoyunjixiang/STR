@@ -155,6 +155,11 @@ v3:
 2. shufflenet
    <br>shuffle-net 这个网络模型，是利用了 group 卷积的概念，与 depth-wise 有点像，只不过，depth-wise 是 feature map 一 一对应的，而 group 卷积是将每个卷积层的 feature map 分成几个组，每个组之间没有交叉，不过组内的 feature map 做卷积的时候和常规的卷积运算是一样的，所以 group 卷积的复杂度应该是介于常规卷积核 depth-wise 卷积之间的，shuffle-net 的创新之处在于，group 卷积之后，为了增加组与组之间的 feature map的通信，提出了一个 shuffle channel 的技术，就是将 group 卷积之后 feature map 打乱，乱序连接到下一层，如下图所示：
 ![img_1.png](img/shufflenet.png)
+3. EffNet
+![img.png](img/EffNet.png)
+   EffNet主要有两个贡献：
+   + 提出了EffNet Block，将深度可分离3x3卷积改进为1x3和3x1的空间可分离卷积，在两者之间添加一维maxpooling
+   + ShuffleNet和MobileNet都选择避免处理第一层，并认为第一层的计算代价已经很低。但是EffNet认为每个优化都非常重要，如果优化了除了第一层以外的其它层，那么第一层的计算量相比之下就会比较大。实验证明使用EffNet块替换第一层能够节省30%的计算量。
    
 ## FCN 和 UNET
 1. FCN
