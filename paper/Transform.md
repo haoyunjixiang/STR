@@ -34,6 +34,19 @@ VIT 与 Resnet的差异：两个网络在整合全局信息的能力上存在差
 
 VIT 代码实现：https://github.com/FrancescoSaverioZuppichini/ViT
 
+## [Swin Transformer](https://arxiv.org/pdf/2103.14030.pdf)
+[源码](https://github.com/microsoft/Swin-Transformer)
+![img.png](../img/SwinTransformer.png)
+主要组成部分：
+1. Patch Embedding
+   + 切块输入 （N，56*56，96）
+2. Patch Merging
+   + 借鉴CNN思想 降采样，缩小特征图分辨率
+   + 在行方向和列方向上，间隔2选取元素。 然后拼接在一起作为一整个张量，最后展开。此时通道维度会变成原先的4倍（因为H,W各缩小2倍），此时再通过一个全连接层再调整通道维度为原来的两倍。
+3. Window Partition/Reverse
+4. Window Attention
+
+
 ## Self-attention based Text Knowledge Mining for Text Detection（STKM)
 ![img.png](../img/STKM.png)
 文章的动机：
