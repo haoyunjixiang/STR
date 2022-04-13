@@ -32,3 +32,9 @@ torch.optim.lr_scheduler 分为三大类
 1. 若新数据集与原来的相似，固定前面的层，只训练最后一层FC
 2. 若差异较大，从中间开始训练
 3. 微调训练时，使用较小的学习率，可以从原始学习率的0.1倍开始尝试。
+
+### permute函数 和 transpose函数
+1. permute可以对任意高维矩阵进行转置
+2. 只能操作2D矩阵的转置
+
+当我们在使用transpose或者permute函数之后，tensor数据将会变的不在连续，而此时，我们采用view之前要使用contiguous函数。
