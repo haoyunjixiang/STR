@@ -7,6 +7,7 @@
    每个此词向量与不同的权重矩阵相乘得到多组QKV向量。其好处：
     + 得到多个表示子空间
     + 扩展了模型专注于不同位置的能力
+    + 可以类似于 CNN 中利用多个卷积核分别提取不同特征
    
 3. 位置编码表示序列顺序
 
@@ -18,15 +19,14 @@
    + 每个值向量乘以softmax分数
    + 对加权值向量求和
 
-
 ## Vision Transform (VIT)
 实现步骤：<br>
 ![img.png](../img/VIT.png)
 1. 图片分块 224 * 224 -->  16 * 16 * 196
 2. patch 转化为 embedding  （196 + 1） * 768  1是加了分类
-3. 加入位置编码   是一个768的向量与embedding 加和 变为 197 * 768
+3. 加入位置编码   是一个768的向量与embedding 加和 变为 197 * 768  （随机设置，通过训练获得）
 4. transform处理  多层叠加处理仍然输出 197 * 768
-5. 分类处理(两种⽅式，⼀种是使⽤CLS token，另⼀种就是对所有tokens的输出做⼀个平均)
+5. 分类处理(两种⽅式，⼀种是使⽤CLS token，另⼀种就是对所有tokens的输出做⼀个平均)。这里在patch 那个维度加入了一个cls_token，可以这样理解这个存在，其他的embedding表达的都是不同的patch的特征，而cls_token是要综合所有patch的信息，产生一个新的embedding，来表达整个图的信息。而dist_token则是属于DeiT网络的结构。
 
 VIT 与 Resnet的差异：两个网络在整合全局信息的能力上存在差异。
 1. VIT无论是高层还是低层都是局部和全局信息混杂的。
@@ -53,5 +53,5 @@ VIT 代码实现：https://github.com/FrancescoSaverioZuppichini/ViT
 在Imagenet以及SynthText数据集上预训练，与实际应用的数据集是有gap的。
 网络处理步骤：
 1. CNN+FPN拿融合特征
-2. ASPM获取位置空间信息特征F
+2. ASPM获取位置空间信息特征
 3. Self-attention Decoder 解码特征F为文本序列

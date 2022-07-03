@@ -38,3 +38,7 @@ torch.optim.lr_scheduler 分为三大类
 2. 只能操作2D矩阵的转置
 
 当我们在使用transpose或者permute函数之后，tensor数据将会变的不在连续，而此时，我们采用view之前要使用contiguous函数。
+
+### torch.einsum
+爱因斯坦求和约定：用于简洁的表示乘积、点积、转置等方法。  C = torch.einsum('ik,kj->ij', A, B)
+
