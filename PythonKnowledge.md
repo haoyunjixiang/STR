@@ -2,6 +2,11 @@
 1. 可变对象是指变量指向的内存块的值是可变的，变量修改后，其指向的内存地址不变。如list dict set等。
 2. 不可变对象与上描述相反，如 int  str tuple等。
 
+## python 赋值是浅拷贝还是深拷贝
+1. 赋值 a = b;其实就是对象的引用
+2. a = copy(b); 浅拷贝
+3. a = copy.deepcopy(b); 深拷贝
+
 ## tuple、list 和 dict 的区别
 1. tuple 不可变元组
 2. list 列表

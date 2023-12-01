@@ -1,8 +1,15 @@
 ## Transformer
-解释参考：https://blog.csdn.net/longxinchen_ml/article/details/86533005
+[解释参考](https://jalammar.github.io/illustrated-transformer/)
+[代码解析](https://mp.weixin.qq.com/s?__biz=MzI1MjQ2OTQ3Ng==&mid=2247587454&idx=1&sn=6d12eb9f50d2c830f1cc6a0ceb9d9c05&chksm=e9e09ff5de9716e3b599b1fe4846fd8b167048ec4f64d96b555abe8b26faeb2c2e8679a30fdd&scene=27)
 1. Q K V 的理解，一个词向量（512维）可以分解为Q K V三个向量（64维）
+   
+   ![img.png](../img/qkv_cal.png)
+   ![img.png](../img/qkv_cal2.png)
    ![img.png](../img/Transformer-QKV.png)
+   最后 z = 0.88 * v1 + 0.12 * v2
 2. Muti-head的计算
+   
+   ![img.png](../img/multi_attention.png)
    ![img.png](../img/Muti-head.png)
    每个此词向量与不同的权重矩阵相乘得到多组QKV向量。其好处：
     + 得到多个表示子空间
@@ -15,7 +22,7 @@
    + 得到QKV向量： X1与WQ、WK、WV矩阵相乘得到q1,k1,v1
    + 打分：当前单词的查询向量与每个单词的键向量点积来计算
    + 除以8(8是论文中使用的键向量的维数64的平方根，这会让梯度更稳定。这里也可以使用其它值，8只是默认值)
-   + 计算softmax，该分数决定了每个单词对编码当下位置（“Thinking”）的贡献
+   + 计算softmax，该分数决定了每个单词对编码当下位置（“Thinking”）的贡献(若是解码，在此步骤之前会有mask操作，只允许关注输出序列中的较早位置)
    + 每个值向量乘以softmax分数
    + 对加权值向量求和
 

@@ -53,3 +53,5 @@ def CELOSS():
     output = loss(input,target)
     output.backward()
     print("CELoss loss:",output)
+
+CELOSS()
